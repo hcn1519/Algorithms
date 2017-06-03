@@ -17,6 +17,9 @@ struct Stack<T> {
     public mutating func pop() -> T? {
         return array.popLast()
     }
+    public var top: Int {
+        return (array.count - 1)
+    }
 }
 
 struct Bracket {
@@ -44,6 +47,7 @@ var failIndex: Int = -1
 var index = 0
 
 var openingStack = Stack<Bracket>()
+
 
 StringIterator: for next in text.characters {
     if next == "(" || next == "[" || next == "{" {
